@@ -559,7 +559,7 @@ namespace AvaloniaEdit
             }
         }
 
-        private bool _allowMultiLine;
+        private bool _allowMultiLine = true;
 
         /// <summary>
         /// Gets/Sets if the user is allowed to enable/disable overstrike mode.
