@@ -58,6 +58,7 @@ namespace AvaloniaEdit
             IsReadOnlyProperty.Changed.Subscribe(OnIsReadOnlyChanged);
             IsModifiedProperty.Changed.Subscribe(OnIsModifiedChanged);
             ShowLineNumbersProperty.Changed.Subscribe(OnShowLineNumbersChanged);
+            ShowLineNumbersSeparatorProperty.Changed.Subscribe(OnShowLineNumbersSeparatorChanged);
             LineNumbersForegroundProperty.Changed.Subscribe(OnLineNumbersForegroundChanged);
         }
 
@@ -514,12 +515,15 @@ namespace AvaloniaEdit
             if ((bool)e.NewValue)
             {
                 var lineNumbers = new LineNumberMargin();
-                var line = (Line)DottedLineMargin.Create();
                 leftMargins.Insert(0, lineNumbers);
-                leftMargins.Insert(1, line);
                 var lineNumbersForeground = new Binding("LineNumbersForeground") { Source = editor };
-                line.Bind(Shape.StrokeProperty, lineNumbersForeground);
                 lineNumbers.Bind(ForegroundProperty, lineNumbersForeground);
+                if (editor.ShowLineNumbersSeparator)
+                {
+                    var line = (Line)DottedLineMargin.Create();
+                    leftMargins.Insert(1, line);
+                    line.Bind(Shape.StrokeProperty, lineNumbersForeground);
+                }
             }
             else
             {
@@ -561,6 +565,49 @@ namespace AvaloniaEdit
             var lineNumberMargin = editor?.TextArea.LeftMargins.FirstOrDefault(margin => margin is LineNumberMargin) as LineNumberMargin;
 
             lineNumberMargin?.SetValue(ForegroundProperty, e.NewValue);
+        }
+        #endregion
+
+        #region ShowLineNumbersSeparator
+        /// <summary>
+        /// ShowLineNumbersSeparator dependency property.
+        /// </summary>
+        public static readonly StyledProperty<bool> ShowLineNumbersSeparatorProperty =
+            AvaloniaProperty.Register<TextEditor, bool>("ShowLineNumbersSeparator", true);
+
+        /// <summary>
+        /// Specifies whether line numbers separator are shown on the left to the text view.
+        /// </summary>
+        public bool ShowLineNumbersSeparator
+        {
+            get => GetValue(ShowLineNumbersSeparatorProperty);
+            set => SetValue(ShowLineNumbersSeparatorProperty, value);
+        }
+
+        private static void OnShowLineNumbersSeparatorChanged(AvaloniaPropertyChangedEventArgs e)
+        {
+            var editor = e.Sender as TextEditor;
+            if (editor == null) return;
+
+            var leftMargins = editor.TextArea.LeftMargins;
+            if ((bool)e.NewValue && editor.ShowLineNumbers)
+            {
+                var lineNumbersForeground = new Binding("LineNumbersForeground") { Source = editor };
+                var line = (Line)DottedLineMargin.Create();
+                leftMargins.Insert(1, line);
+                line.Bind(Shape.StrokeProperty, lineNumbersForeground);
+            }
+            else
+            {
+                for (var i = 0; i < leftMargins.Count; i++)
+                {
+                    if (DottedLineMargin.IsDottedLineMargin(leftMargins[i]))
+                    {
+                        leftMargins.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
         }
         #endregion
 

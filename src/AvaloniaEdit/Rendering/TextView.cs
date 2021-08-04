@@ -276,7 +276,7 @@ namespace AvaloniaEdit.Rendering
         #region Builtin ElementGenerators
         //		NewLineElementGenerator newLineElementGenerator;
         private SingleCharacterElementGenerator _singleCharacterElementGenerator;
-
+            
         private LinkElementGenerator _linkElementGenerator;
         private MailLinkElementGenerator _mailLinkElementGenerator;
 
@@ -997,7 +997,7 @@ namespace AvaloniaEdit.Rendering
             // number of pixels clipped from the first visual line(s)
             _clippedPixelsOnTop = _scrollOffset.Y - _heightTree.GetVisualPosition(firstLineInView);
             // clippedPixelsOnTop should be >= 0, except for floating point inaccurracy.
-            Debug.Assert(_clippedPixelsOnTop >= -ExtensionMethods.Epsilon);
+            //Debug.Assert(_clippedPixelsOnTop >= -ExtensionMethods.Epsilon);
 
             _newVisualLines = new List<VisualLine>();
 
@@ -1585,9 +1585,12 @@ namespace AvaloniaEdit.Rendering
             }
             newScrollOffsetX = ValidateVisualOffset(newScrollOffsetX);
             newScrollOffsetY = ValidateVisualOffset(newScrollOffsetY);
-            
-            if (!Options.AllowMultiLine)
-                newScrollOffsetY = 0;
+
+            var options = Options;
+            if (!options.AllowMultiLine)
+            {
+                newScrollOffsetY = 0; // (_scrollViewport.Height - rectangle.Height) /2;
+            }
 
             var newScrollOffset = new Vector(newScrollOffsetX, newScrollOffsetY);
             if (!_scrollOffset.IsClose(newScrollOffset))
