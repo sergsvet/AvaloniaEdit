@@ -58,6 +58,30 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="AvaloniaEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="CodeCompletion\CompletionList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="CodeCompletion\InsightWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Editing\TextArea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Search\DropDownButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Search\SearchPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="TextEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
   <Target Name="ChangeAliasesOfSystemDrawing" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
     <ItemGroup>
       <ReferencePath Condition="'%(FileName)' == 'Splat'">
