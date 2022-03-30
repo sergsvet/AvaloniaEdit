@@ -392,7 +392,16 @@ namespace AvaloniaEdit.Editing
 
         private void TextArea_MouseLeftButtonDown(object sender, PointerPressedEventArgs e)
         {
+//<<<<<<< HEAD SSE !!!
             if (e.GetCurrentPoint(TextArea).Properties.IsLeftButtonPressed == false)
+//=======
+            TextArea.Cursor = Cursor.Parse("IBeam");           
+
+//            var pointer = e.GetCurrentPoint(TextArea);
+
+//            _mode = SelectionMode.None;
+//            if (!e.Handled)
+//>>>>>>> 8a18c58 (avalonEdit fixes)
             {
                 if (TextArea.RightClickMovesCaret == true && e.Handled == false)
                 {

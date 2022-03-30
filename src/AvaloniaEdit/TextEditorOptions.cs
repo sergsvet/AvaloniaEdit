@@ -558,5 +558,24 @@ namespace AvaloniaEdit
                 }
             }
         }
+
+        private bool _allowMultiLine;
+
+        /// <summary>
+        /// Gets/Sets if the user is allowed to enable/disable overstrike mode.
+        /// </summary>
+        [DefaultValue(true)]
+        public bool AllowMultiLine
+        {
+            get { return _allowMultiLine; }
+            set
+            {
+                if (_allowMultiLine != value)
+                {
+                    _allowMultiLine = value;
+                    OnPropertyChanged("AllowMultiLine");
+                }
+            }
+        }
     }
 }
