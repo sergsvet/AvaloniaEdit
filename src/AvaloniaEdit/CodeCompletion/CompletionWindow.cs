@@ -60,11 +60,7 @@ namespace AvaloniaEdit.CodeCompletion
 
             _toolTip = new PopupWithCustomPosition
             {
-//<<<<<<< HEAD SSE !!!
                 IsLightDismissEnabled = true,
-//=======
-//                IsLightDismissEnabled = false,
-//>>>>>>> 8a18c58 (avalonEdit fixes)
                 PlacementTarget = this,
                 PlacementMode = PlacementMode.Right,
                 Child = _toolTipContent,
