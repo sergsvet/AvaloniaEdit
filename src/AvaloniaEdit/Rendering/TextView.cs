@@ -1585,6 +1585,10 @@ namespace AvaloniaEdit.Rendering
             }
             newScrollOffsetX = ValidateVisualOffset(newScrollOffsetX);
             newScrollOffsetY = ValidateVisualOffset(newScrollOffsetY);
+            
+            if (!Options.AllowMultiLine)
+                newScrollOffsetY = 0;
+
             var newScrollOffset = new Vector(newScrollOffsetX, newScrollOffsetY);
             if (!_scrollOffset.IsClose(newScrollOffset))
             {
