@@ -5,6 +5,7 @@
     <WarningsNotAsErrors>0612,0618</WarningsNotAsErrors>
 	<PackageId>Avalonia.AvaloniaEdit</PackageId>
 	<Platforms>AnyCPU;x64</Platforms>
+	<PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
