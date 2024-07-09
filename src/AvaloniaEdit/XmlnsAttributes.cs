@@ -1,5 +1,5 @@
-﻿using System.Runtime.CompilerServices;
-using Avalonia.Metadata;
+﻿using Avalonia.Metadata;
+using System.Runtime.CompilerServices;
 
 [assembly: XmlnsDefinition("https://github.com/avaloniaui/avaloniaedit", "AvaloniaEdit")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui/avaloniaedit", "AvaloniaEdit.Editing")]

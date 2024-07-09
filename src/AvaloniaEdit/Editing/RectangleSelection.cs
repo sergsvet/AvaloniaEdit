@@ -16,13 +16,13 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using Avalonia;
+using AvaloniaEdit.Document;
+using AvaloniaEdit.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Avalonia;
-using AvaloniaEdit.Document;
-using AvaloniaEdit.Utils;
 
 namespace AvaloniaEdit.Editing
 {
@@ -79,7 +79,7 @@ namespace AvaloniaEdit.Editing
         /// Key gesture: Alt+Shift+End
         /// </summary>
         public static readonly RoutedCommand BoxSelectToLineEnd = new RoutedCommand(nameof(BoxSelectToLineEnd));
-        
+
         #endregion
 
         private TextDocument _document;

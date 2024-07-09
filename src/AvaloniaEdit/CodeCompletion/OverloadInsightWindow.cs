@@ -17,8 +17,8 @@
 // DEALINGS IN THE SOFTWARE.
 
 using Avalonia;
-using AvaloniaEdit.Editing;
 using Avalonia.Input;
+using AvaloniaEdit.Editing;
 
 namespace AvaloniaEdit.CodeCompletion
 {

@@ -16,12 +16,12 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using Avalonia.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using Avalonia.Threading;
 
 namespace AvaloniaEdit.Document
 {
@@ -357,7 +357,7 @@ namespace AvaloniaEdit.Document
 
         public DocumentLine InsertLineAfter(DocumentLine line, int totalLength)
         {
-            var newLine = new DocumentLine(_document) {TotalLength = totalLength};
+            var newLine = new DocumentLine(_document) { TotalLength = totalLength };
 
             InsertAfter(line, newLine);
             return newLine;

@@ -16,9 +16,8 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using Avalonia.Controls.Platform;
 using AvaloniaEdit.Editing;
+using System;
 
 namespace AvaloniaEdit.CodeCompletion
 {

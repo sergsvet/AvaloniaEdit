@@ -16,14 +16,14 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using Avalonia;
-using AvaloniaEdit.Document;
-using AvaloniaEdit.Editing;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Media;
+using AvaloniaEdit.Document;
+using AvaloniaEdit.Editing;
+using System;
 
 namespace AvaloniaEdit.CodeCompletion
 {
@@ -53,7 +53,7 @@ namespace AvaloniaEdit.CodeCompletion
             Child = CompletionList;
             // prevent user from resizing window to 0x0
             MinHeight = 15;
-            MinWidth = 30;          
+            MinWidth = 30;
 
             _toolTipContent = new ContentControl();
             _toolTipContent.Classes.Add("ToolTip");
@@ -104,7 +104,7 @@ namespace AvaloniaEdit.CodeCompletion
                     };
                 }
                 else
-                {                   
+                {
                     _toolTipContent.Content = description;
                 }
 
@@ -117,12 +117,12 @@ namespace AvaloniaEdit.CodeCompletion
                     int scrollIndex = (int)CompletionList.ListBox.Scroll.Offset.Y;
                     int yoffset = index - scrollIndex;
                     if (yoffset < 0) yoffset = 0;
-                    if ((yoffset+1) * 20 > MaxHeight) yoffset--;
+                    if ((yoffset + 1) * 20 > MaxHeight) yoffset--;
                     _toolTip.Offset = new PixelPoint(2, yoffset * 20); //Todo find way to measure item height
                 }
 
                 _toolTip.PlacementTarget = this.Host as PopupRoot;
-                _toolTip.IsOpen = true;                    
+                _toolTip.IsOpen = true;
             }
             else
             {

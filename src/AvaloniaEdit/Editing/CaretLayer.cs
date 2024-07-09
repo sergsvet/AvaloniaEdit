@@ -16,13 +16,13 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Threading;
 using AvaloniaEdit.Rendering;
 using AvaloniaEdit.Utils;
+using System;
 
 namespace AvaloniaEdit.Editing
 {
@@ -72,7 +72,7 @@ namespace AvaloniaEdit.Editing
             // TODO
             var blinkTime = TimeSpan.FromMilliseconds(500); //Win32.CaretBlinkTime;
             _blink = true; // the caret should visible initially
-                          // This is important if blinking is disabled (system reports a negative blinkTime)
+                           // This is important if blinking is disabled (system reports a negative blinkTime)
             if (blinkTime.TotalMilliseconds > 0)
             {
                 _caretBlinkTimer.Interval = blinkTime;

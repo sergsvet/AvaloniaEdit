@@ -16,10 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
+using System;
 
 namespace AvaloniaEdit.Rendering
 {
@@ -60,9 +60,9 @@ namespace AvaloniaEdit.Rendering
 
         public CurrentLineHighlightRenderer(TextView textView)
         {
-			BorderPen = new Pen(new ImmutableSolidColorBrush(DefaultBorder));
+            BorderPen = new Pen(new ImmutableSolidColorBrush(DefaultBorder));
 
-			BackgroundBrush = new ImmutableSolidColorBrush(DefaultBackground);
+            BackgroundBrush = new ImmutableSolidColorBrush(DefaultBackground);
 
             _textView = textView ?? throw new ArgumentNullException(nameof(textView));
             _textView.BackgroundRenderers.Add(this);

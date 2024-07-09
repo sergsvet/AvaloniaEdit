@@ -1,6 +1,6 @@
-﻿using System.Globalization;
-using Avalonia.Media;
+﻿using Avalonia.Media;
 using Avalonia.Media.TextFormatting;
+using System.Globalization;
 
 namespace AvaloniaEdit.Text
 {
@@ -71,7 +71,7 @@ namespace AvaloniaEdit.Text
 
         public bool Underline
         {
-            get{ return _underline; }
+            get { return _underline; }
             set { _underline = value; }
         }
 

@@ -16,14 +16,14 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
 using Avalonia;
+using Avalonia.Input;
+using Avalonia.Media;
 using AvaloniaEdit.Rendering;
 using AvaloniaEdit.Text;
 using AvaloniaEdit.Utils;
-using Avalonia.Input;
-using Avalonia.Media;
+using System;
+using System.Collections.Generic;
 
 namespace AvaloniaEdit.Folding
 {

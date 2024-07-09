@@ -16,20 +16,18 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
-using Avalonia.Interactivity;
 using Avalonia.Media;
-using Avalonia.VisualTree;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Editing;
 using AvaloniaEdit.Rendering;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AvaloniaEdit.Search
 {
@@ -496,7 +494,7 @@ namespace AvaloniaEdit.Search
             _textArea.RemoveChild(this);
             _messageView.IsOpen = false;
             _textArea.TextView.BackgroundRenderers.Remove(_renderer);
-            
+
             IsClosed = true;
 
             // Clear existing search results so that the segments don't have to be maintained

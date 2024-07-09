@@ -21,6 +21,6 @@ namespace AvaloniaEdit.CodeCompletion
 
                 //this.Revalidate(VerticalOffsetProperty);
             }
-        }            
+        }
     }
 }

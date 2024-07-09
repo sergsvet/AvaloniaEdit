@@ -16,11 +16,11 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using Avalonia;
 using Avalonia.Media;
 using AvaloniaEdit.Text;
 using AvaloniaEdit.Utils;
+using System;
 
 namespace AvaloniaEdit.Rendering
 {

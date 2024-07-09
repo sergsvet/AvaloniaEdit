@@ -16,13 +16,13 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using Avalonia.Threading;
+using AvaloniaEdit.Document;
+using AvaloniaEdit.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using AvaloniaEdit.Document;
-using AvaloniaEdit.Utils;
-using Avalonia.Threading;
 using SpanStack = System.Collections.Immutable.ImmutableStack<AvaloniaEdit.Highlighting.HighlightingSpan>;
 
 namespace AvaloniaEdit.Highlighting

@@ -20,7 +20,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
-using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
@@ -29,7 +28,6 @@ using Avalonia.VisualTree;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Indentation;
 using AvaloniaEdit.Rendering;
-using AvaloniaEdit.Search;
 using AvaloniaEdit.Utils;
 using System;
 using System.Collections.Generic;
@@ -619,7 +617,7 @@ namespace AvaloniaEdit.Editing
         /// If the textview can be scrolled.
         /// </summary>
         /// <param name="line">The line to scroll to.</param>
-        public void ScrollToLine (int line)
+        public void ScrollToLine(int line)
         {
             var viewPortLines = (int)(this as IScrollable).Viewport.Height;
 

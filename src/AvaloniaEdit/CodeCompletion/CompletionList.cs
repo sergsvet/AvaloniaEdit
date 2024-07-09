@@ -16,10 +16,6 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -27,6 +23,10 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml.Templates;
 using AvaloniaEdit.Utils;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace AvaloniaEdit.CodeCompletion
 {
@@ -165,11 +165,11 @@ namespace AvaloniaEdit.CodeCompletion
                     break;
                 case Key.Tab:
                 case Key.Enter:
-                    if(CurrentList.Count > 0)
+                    if (CurrentList.Count > 0)
                     {
                         e.Handled = true;
                         RequestInsertion(e);
-                    }                    
+                    }
                     break;
             }
         }

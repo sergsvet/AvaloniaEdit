@@ -16,10 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Input;
 using Avalonia.Platform;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AvaloniaEdit
 {
@@ -117,11 +117,11 @@ namespace AvaloniaEdit
         {
             return AvaloniaLocator.Current.GetService<IRuntimePlatform>().GetRuntimeInfo().OperatingSystem;
         }
-        
+
         private static KeyModifiers GetPlatformCommandKey()
         {
             var os = GetOperatingSystemType();
-            
+
             if (os == OperatingSystemType.OSX)
             {
                 return KeyModifiers.Meta;

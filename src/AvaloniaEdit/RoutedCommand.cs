@@ -1,10 +1,10 @@
+using Avalonia;
+using Avalonia.Input;
+using Avalonia.Interactivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
-using Avalonia;
-using Avalonia.Input;
-using Avalonia.Interactivity;
 
 namespace AvaloniaEdit
 {

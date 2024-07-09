@@ -16,32 +16,32 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System.Collections.Generic;
 using AvaloniaEdit.Utils;
+using System.Collections.Generic;
 
 namespace AvaloniaEdit.Highlighting.Xshd
 {
-	/// <summary>
-	/// A list of keywords.
-	/// </summary>
-	public class XshdKeywords : XshdElement
-	{
-		/// <summary>
-		/// The color.
-		/// </summary>
-		public XshdReference<XshdColor> ColorReference { get; set; }
-		
-		readonly NullSafeCollection<string> _words = new NullSafeCollection<string>();
-		
-		/// <summary>
-		/// Gets the list of key words.
-		/// </summary>
-		public IList<string> Words => _words;
+    /// <summary>
+    /// A list of keywords.
+    /// </summary>
+    public class XshdKeywords : XshdElement
+    {
+        /// <summary>
+        /// The color.
+        /// </summary>
+        public XshdReference<XshdColor> ColorReference { get; set; }
 
-	    /// <inheritdoc/>
-		public override object AcceptVisitor(IXshdVisitor visitor)
-		{
-			return visitor.VisitKeywords(this);
-		}
-	}
+        readonly NullSafeCollection<string> _words = new NullSafeCollection<string>();
+
+        /// <summary>
+        /// Gets the list of key words.
+        /// </summary>
+        public IList<string> Words => _words;
+
+        /// <inheritdoc/>
+        public override object AcceptVisitor(IXshdVisitor visitor)
+        {
+            return visitor.VisitKeywords(this);
+        }
+    }
 }

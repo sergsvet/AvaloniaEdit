@@ -16,12 +16,12 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Diagnostics;
 using Avalonia;
+using Avalonia.Controls;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Rendering;
-using Avalonia.Controls;
+using System;
+using System.Diagnostics;
 
 namespace AvaloniaEdit.Editing
 {

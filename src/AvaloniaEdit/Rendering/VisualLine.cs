@@ -16,17 +16,17 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Text;
 using AvaloniaEdit.Utils;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 
 namespace AvaloniaEdit.Rendering
 {
@@ -167,7 +167,7 @@ namespace AvaloniaEdit.Rendering
                 var textPieceEndOffset = currentLineEnd;
                 foreach (var g in generators)
                 {
-                    g.CachedInterest = (lineLength > LENGTH_LIMIT) ? -1: g.GetFirstInterestedOffset(offset + askInterestOffset);
+                    g.CachedInterest = (lineLength > LENGTH_LIMIT) ? -1 : g.GetFirstInterestedOffset(offset + askInterestOffset);
                     if (g.CachedInterest != -1)
                     {
                         if (g.CachedInterest < offset)

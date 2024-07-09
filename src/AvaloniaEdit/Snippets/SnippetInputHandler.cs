@@ -16,10 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using Avalonia.Input;
+using AvaloniaEdit.Editing;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using AvaloniaEdit.Editing;
-using Avalonia.Input;
 
 namespace AvaloniaEdit.Snippets
 {

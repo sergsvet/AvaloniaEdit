@@ -17,8 +17,8 @@
 // DEALINGS IN THE SOFTWARE.
 
 using System;
-using System.Globalization;
 using System.ComponentModel;
+using System.Globalization;
 
 namespace AvaloniaEdit.Document
 {

@@ -16,14 +16,14 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Diagnostics;
 using Avalonia;
+using Avalonia.Media;
+using Avalonia.Threading;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Rendering;
 using AvaloniaEdit.Utils;
-using Avalonia.Media;
-using Avalonia.Threading;
+using System;
+using System.Diagnostics;
 
 namespace AvaloniaEdit.Editing
 {
@@ -300,7 +300,7 @@ namespace AvaloniaEdit.Editing
                 var document = _textArea.Document;
                 if (document != null)
                 {
-                   // Debug.WriteLine("Explicit validation of caret column");
+                    // Debug.WriteLine("Explicit validation of caret column");
                     var documentLine = document.GetLineByNumber(_position.Line);
                     RevalidateVisualColumn(_textView.GetOrConstructVisualLine(documentLine));
                 }

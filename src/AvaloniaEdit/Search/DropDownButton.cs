@@ -16,12 +16,10 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Interactivity;
-using Avalonia.Styling;
+using System;
 
 namespace AvaloniaEdit.Search
 {
@@ -50,7 +48,7 @@ namespace AvaloniaEdit.Search
         /// </summary>
         public static readonly StyledProperty<bool> IsDropDownContentOpenProperty
             = AvaloniaProperty.Register<DropDownButton, bool>(nameof(IsDropDownContentOpen));
-        
+
         /// <summary>
         /// Gets whether the drop-down is opened.
         /// </summary>
@@ -60,19 +58,19 @@ namespace AvaloniaEdit.Search
             protected set => SetValue(IsDropDownContentOpenProperty, value);
         }
 
-       /* protected override void OnClick(RoutedEventArgs e)
-        {
-            base.OnClick(e);
+        /* protected override void OnClick(RoutedEventArgs e)
+         {
+             base.OnClick(e);
 
-            if (DropDownContent != null && !IsDropDownContentOpen)
-            {
-                DropDownContent.PlacementMode = PlacementMode.Bottom;
-                DropDownContent.PlacementTarget = this;
-                DropDownContent.IsOpen = true;
-                DropDownContent.Closed += DropDownContent_Closed;
-                IsDropDownContentOpen = true;
-            }
-        }*/
+             if (DropDownContent != null && !IsDropDownContentOpen)
+             {
+                 DropDownContent.PlacementMode = PlacementMode.Bottom;
+                 DropDownContent.PlacementTarget = this;
+                 DropDownContent.IsOpen = true;
+                 DropDownContent.Closed += DropDownContent_Closed;
+                 IsDropDownContentOpen = true;
+             }
+         }*/
 
         private void DropDownContent_Closed(object sender, EventArgs e)
         {

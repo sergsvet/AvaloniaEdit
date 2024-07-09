@@ -16,19 +16,9 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
@@ -38,6 +28,15 @@ using AvaloniaEdit.Document;
 using AvaloniaEdit.Editing;
 using AvaloniaEdit.Text;
 using AvaloniaEdit.Utils;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AvaloniaEdit.Rendering
 {
@@ -276,7 +275,7 @@ namespace AvaloniaEdit.Rendering
         #region Builtin ElementGenerators
         //		NewLineElementGenerator newLineElementGenerator;
         private SingleCharacterElementGenerator _singleCharacterElementGenerator;
-            
+
         private LinkElementGenerator _linkElementGenerator;
         private MailLinkElementGenerator _mailLinkElementGenerator;
 
@@ -1882,7 +1881,7 @@ namespace AvaloniaEdit.Rendering
             add => AddHandler(PointerHoverStoppedEvent, value);
             remove => RemoveHandler(PointerHoverStoppedEvent, value);
         }
-        
+
 
         private readonly PointerHoverLogic _hoverLogic;
 
@@ -1938,7 +1937,7 @@ namespace AvaloniaEdit.Rendering
         /// <inheritdoc/>
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {
-            base.OnPropertyChanged(change);        
+            base.OnPropertyChanged(change);
 
             if (change.Property == TemplatedControl.ForegroundProperty
                      || change.Property == NonPrintableCharacterBrushProperty
@@ -2103,7 +2102,7 @@ namespace AvaloniaEdit.Rendering
             }
         }
 
-        bool ILogicalScrollable.IsLogicalScrollEnabled => true;        
+        bool ILogicalScrollable.IsLogicalScrollEnabled => true;
 
         Size ILogicalScrollable.ScrollSize => new Size(10, 50);
 

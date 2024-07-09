@@ -16,11 +16,11 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
 using Avalonia.Input;
 using Avalonia.Threading;
 using AvaloniaEdit.Editing;
+using System;
+using System.Collections.Generic;
 
 namespace AvaloniaEdit.Search
 {

@@ -16,15 +16,14 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using Avalonia;
+using Avalonia.Input;
+using AvaloniaEdit.Document;
+using AvaloniaEdit.Utils;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Avalonia;
-using AvaloniaEdit.Document;
-using Avalonia.Input;
-using AvaloniaEdit.Utils;
-using System.Threading.Tasks;
 
 namespace AvaloniaEdit.Editing
 {
@@ -61,7 +60,7 @@ namespace AvaloniaEdit.Editing
         }
 
         static EditingCommandHandler()
-        {            
+        {
             AddBinding(EditingCommands.Delete, KeyModifiers.None, Key.Delete, OnDelete(CaretMovementType.CharRight));
             AddBinding(EditingCommands.DeleteNextWord, KeyModifiers.Control, Key.Delete,
                 OnDelete(CaretMovementType.WordRight));
@@ -440,7 +439,7 @@ namespace AvaloniaEdit.Editing
             ISegment wholeLine = new SimpleSegment(line.Offset, line.TotalLength);
             var text = textArea.Document.GetText(wholeLine);
             // Ignore empty line copy
-            if(string.IsNullOrEmpty(text)) return false;
+            if (string.IsNullOrEmpty(text)) return false;
             // Ensure we use the appropriate newline sequence for the OS
             text = TextUtilities.NormalizeNewLines(text, Environment.NewLine);
 
@@ -497,7 +496,7 @@ namespace AvaloniaEdit.Editing
                 string text = null;
                 try
                 {
-                     text = await Application.Current.Clipboard.GetTextAsync();
+                    text = await Application.Current.Clipboard.GetTextAsync();
                 }
                 catch (Exception)
                 {

@@ -16,13 +16,13 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+using AvaloniaEdit.Highlighting.Xshd;
+using AvaloniaEdit.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Xml;
-using AvaloniaEdit.Highlighting.Xshd;
-using AvaloniaEdit.Utils;
 
 namespace AvaloniaEdit.Highlighting
 {

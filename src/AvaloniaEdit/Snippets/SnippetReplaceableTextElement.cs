@@ -16,12 +16,12 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Linq;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Rendering;
+using System;
+using System.Linq;
 
 namespace AvaloniaEdit.Snippets
 {
@@ -175,7 +175,7 @@ namespace AvaloniaEdit.Snippets
 
             private static IBrush CreateBackgroundBrush()
             {
-				var b = new ImmutableSolidColorBrush(Colors.LimeGreen, 0.4);
+                var b = new ImmutableSolidColorBrush(Colors.LimeGreen, 0.4);
                 return b;
             }
 

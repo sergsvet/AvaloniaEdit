@@ -1,15 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.TextFormatting;
 using Avalonia.Media.TextFormatting.Unicode;
 using Avalonia.Utilities;
-
 using AvaloniaEdit.Rendering;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AvaloniaEdit.Text
 {
@@ -69,7 +67,7 @@ namespace AvaloniaEdit.Text
                     var box = embeddedObject.ComputeBoundingBox();
                     return box.Height;
                 }
-                
+
                 return GetDefaultLineHeight(TextRun.Properties.FontMetrics);
             }
         }
@@ -293,11 +291,11 @@ namespace AvaloniaEdit.Text
                     new Point(x, y), _formattedText);
 
                 var glyphTypeface = TextRun.Properties.Typeface.GlyphTypeface;
-                
-                var scale =  TextRun.Properties.FontSize / glyphTypeface.DesignEmHeight;
+
+                var scale = TextRun.Properties.FontSize / glyphTypeface.DesignEmHeight;
 
                 var baseline = y + -glyphTypeface.Ascent * scale;
-                
+
                 if (TextRun.Properties.Underline)
                 {
                     var pen = new Pen(TextRun.Properties.ForegroundBrush, glyphTypeface.UnderlineThickness * scale);
@@ -446,8 +444,8 @@ namespace AvaloniaEdit.Text
             {
                 int capacity = _range.Length;
 
-                bool useCheapGlyphMeasurement = 
-                    capacity >= VisualLine.LENGTH_LIMIT && 
+                bool useCheapGlyphMeasurement =
+                    capacity >= VisualLine.LENGTH_LIMIT &&
                     _typeFace.IsFixedPitch;
 
                 if (useCheapGlyphMeasurement)

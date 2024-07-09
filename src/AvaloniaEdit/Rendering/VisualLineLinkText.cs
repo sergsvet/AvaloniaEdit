@@ -16,11 +16,11 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using AvaloniaEdit.Text;
+using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.Controls;
+using AvaloniaEdit.Text;
+using System;
 using System.Diagnostics;
 
 namespace AvaloniaEdit.Rendering
@@ -38,7 +38,7 @@ namespace AvaloniaEdit.Rendering
         /// <summary>
         /// Routed event that should navigate to uri when the link is clicked.
         /// </summary>
-        public static RoutedEvent<OpenUriRoutedEventArgs> OpenUriEvent { get; } = RoutedEvent.Register<VisualLineText,OpenUriRoutedEventArgs>(nameof(OpenUriEvent), RoutingStrategies.Bubble);
+        public static RoutedEvent<OpenUriRoutedEventArgs> OpenUriEvent { get; } = RoutedEvent.Register<VisualLineText, OpenUriRoutedEventArgs>(nameof(OpenUriEvent), RoutingStrategies.Bubble);
 
         /// <summary>
         /// Gets/Sets the URL that is navigated to when the link is clicked.
@@ -93,7 +93,7 @@ namespace AvaloniaEdit.Rendering
         {
             if (LinkIsClickable(e.KeyModifiers))
             {
-                if(e.Source is InputElement inputElement)
+                if (e.Source is InputElement inputElement)
                 {
                     inputElement.Cursor = new Cursor(StandardCursorType.Hand);
                 }

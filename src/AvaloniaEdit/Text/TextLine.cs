@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Media;
+using System.Collections.Generic;
 
 namespace AvaloniaEdit.Text
 {

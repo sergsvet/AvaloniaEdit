@@ -16,13 +16,12 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
-using System.Globalization;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Markup;
 using Avalonia.Data.Converters;
+using System;
+using System.Globalization;
 
 namespace AvaloniaEdit.CodeCompletion
 {

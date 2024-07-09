@@ -16,57 +16,59 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-using System;
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
 using AvaloniaEdit.Utils;
+using System;
 
 namespace AvaloniaEdit.Rendering
 {
-	/// <summary>
-	/// Renders a ruler at a certain column.
-	/// </summary>
-	internal sealed class ColumnRulerRenderer : IBackgroundRenderer
-	{
-	    private Pen _pen;
-	    private int _column;
-	    private readonly TextView _textView;
-		
-		public static readonly Color DefaultForeground = Colors.LightGray;
-		
-		public ColumnRulerRenderer(TextView textView)
-		{
-			_pen = new Pen(new ImmutableSolidColorBrush(DefaultForeground));
-			_textView = textView ?? throw new ArgumentNullException(nameof(textView));
-			_textView.BackgroundRenderers.Add(this);
-		}
-		
-		public KnownLayer Layer => KnownLayer.Background;
+    /// <summary>
+    /// Renders a ruler at a certain column.
+    /// </summary>
+    internal sealed class ColumnRulerRenderer : IBackgroundRenderer
+    {
+        private Pen _pen;
+        private int _column;
+        private readonly TextView _textView;
 
-	    public void SetRuler(int column, Pen pen)
-		{
-			if (_column != column) {
-				_column = column;
-				_textView.InvalidateLayer(Layer);
-			}
-			if (_pen != pen) {
-				_pen = pen;
-				_textView.InvalidateLayer(Layer);
-			}
-		}
-		
-		public void Draw(TextView textView, DrawingContext drawingContext)
-		{
-			if (_column < 1) return;
-			double offset = textView.WideSpaceWidth * _column;
-			Size pixelSize = PixelSnapHelpers.GetPixelSize(textView);
-			double markerXPos = PixelSnapHelpers.PixelAlign(offset, pixelSize.Width);
-			markerXPos -= textView.ScrollOffset.X;
-			Point start = new Point(markerXPos, 0);
-			Point end = new Point(markerXPos, Math.Max(textView.DocumentHeight, textView.Bounds.Height));
-			
-			drawingContext.DrawLine(_pen, start, end);
-		}
-	}
+        public static readonly Color DefaultForeground = Colors.LightGray;
+
+        public ColumnRulerRenderer(TextView textView)
+        {
+            _pen = new Pen(new ImmutableSolidColorBrush(DefaultForeground));
+            _textView = textView ?? throw new ArgumentNullException(nameof(textView));
+            _textView.BackgroundRenderers.Add(this);
+        }
+
+        public KnownLayer Layer => KnownLayer.Background;
+
+        public void SetRuler(int column, Pen pen)
+        {
+            if (_column != column)
+            {
+                _column = column;
+                _textView.InvalidateLayer(Layer);
+            }
+            if (_pen != pen)
+            {
+                _pen = pen;
+                _textView.InvalidateLayer(Layer);
+            }
+        }
+
+        public void Draw(TextView textView, DrawingContext drawingContext)
+        {
+            if (_column < 1) return;
+            double offset = textView.WideSpaceWidth * _column;
+            Size pixelSize = PixelSnapHelpers.GetPixelSize(textView);
+            double markerXPos = PixelSnapHelpers.PixelAlign(offset, pixelSize.Width);
+            markerXPos -= textView.ScrollOffset.X;
+            Point start = new Point(markerXPos, 0);
+            Point end = new Point(markerXPos, Math.Max(textView.DocumentHeight, textView.Bounds.Height));
+
+            drawingContext.DrawLine(_pen, start, end);
+        }
+    }
 }
